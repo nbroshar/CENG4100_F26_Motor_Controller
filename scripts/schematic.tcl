@@ -34,9 +34,14 @@ synth_design -rtl -top $top -part $part -name rtl_1
 
 set out [file join $root build schematic]
 file mkdir $out
-if {[catch { show_schematic [get_cells] } msg]} {
-    puts "Could not open the schematic window ($msg). Use Vivado's window, not batch mode."
-} else {
-    write_schematic -force -format pdf -orientation landscape [file join $out $top.pdf]
-    puts "Schematic of $top saved to [file join $out $top.pdf]"
+set pdf [file join $out $top.pdf]
+# Vivado opens the full schematic by itself after elaborating. Save that one;
+# only if there's no schematic open, open one first.
+if {[catch { write_schematic -force -format pdf -orientation landscape $pdf }]} {
+    if {[catch { show_schematic [concat [get_cells] [get_ports]] } msg]} {
+        puts "Could not open a schematic ($msg). Use Vivado's window, not batch mode."
+        return
+    }
+    write_schematic -force -format pdf -orientation landscape $pdf
 }
+puts "Schematic of $top saved to $pdf"
