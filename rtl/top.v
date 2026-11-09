@@ -1,3 +1,4 @@
+`timescale 1ns/1ps
 // top.v -- board wrapper for the CENG 4100 RV32I capstone.
 //
 // LOCKED: the module name and port list must not change. They match

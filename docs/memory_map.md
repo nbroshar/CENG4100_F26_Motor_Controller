@@ -52,8 +52,15 @@ address order, starting at the region's base address. Load them with
 `$readmemh("imem.mem", array)` using the plain file name; the scripts copy the
 right images into the working directory for simulation and synthesis.
 
-| File | Words | Covers |
+| File | Words (full size) | Covers (full size) |
 | --- | --- | --- |
 | `imem.mem` | 4096 | 0x0000_0000 – 0x0000_3FFF |
 | `dmem.mem` | 4096 | 0x0000_4000 – 0x0000_7FFF |
 | `mem.mem` | 8192 | 0x0000_0000 – 0x0000_7FFF |
+
+These are the sizes with the full 16 KB memories. If your team chooses smaller
+memories (D4 Memory sizes), change the `LENGTH` lines in `sw/common/link.ld`:
+the build scripts read them, and each image then has exactly as many words as
+your memory (for example 2,048 words for an 8 KB instruction memory). Keep
+`link.ld`, your memory modules and these images the same size, and rebuild
+the riscv-tests after changing it.

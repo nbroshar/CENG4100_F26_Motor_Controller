@@ -1,0 +1,20 @@
+# Generated outputs
+build/
+sw/build/
+tests/build/
+tests/riscv-tests/
+reports/*
+!reports/tests.txt
+!reports/.gitkeep
+
+# Vivado and simulator droppings
+*.jou
+*.log
+*.pb
+*.wdb
+*.vcd
+.Xil/
+xsim.dir/
+webtalk*
+usage_statistics*
+__pycache__/

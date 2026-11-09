@@ -5,7 +5,7 @@ module to match it. Verification writes each testbench from it, without
 opening Core's Verilog. Change it only when the whole team agrees, and tell
 both roles when you do.
 
-Fill it in from the plan Copilot gives you (Lab 1, Step 3, Prompt 1), after
+Fill it in from the plan Copilot gives you (Lab 1, Step 5, Prompt 1), after
 the team has reviewed and corrected that plan.
 
 ## Register file (`rtl/regfile.v`, module `regfile`)

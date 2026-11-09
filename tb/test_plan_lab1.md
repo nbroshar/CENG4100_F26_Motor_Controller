@@ -13,7 +13,8 @@ fails, so keep it short and unique.
 Must include: 0; −1 (0xFFFF_FFFF); the most negative number (0x8000_0000);
 add and sub that overflow; shifts by 0 and by 31; a shift amount above 31
 (only the low 5 bits count); signed and unsigned compare on the same pair
-where they disagree (for example −1 and 1).
+where they disagree (for example −1 and 1); a signed compare where
+a − b overflows (for example 0x8000_0000 and 1).
 
 | # | Name | Operation | A | B | Expected result | Why this case (spec section) |
 | --- | --- | --- | --- | --- | --- | --- |

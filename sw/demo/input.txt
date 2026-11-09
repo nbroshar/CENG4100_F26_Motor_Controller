@@ -1,0 +1,5 @@
+help
+led 5a
+seg 1234
+sw
+exit

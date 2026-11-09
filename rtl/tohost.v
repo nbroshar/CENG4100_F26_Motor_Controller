@@ -1,3 +1,4 @@
+`timescale 1ns/1ps
 // tohost.v -- pass/fail reporting at 0x1000_F000. LOCKED: do not modify.
 //
 // Connect `we` to "a store to 0x1000_F000 is happening this cycle" and `wdata`

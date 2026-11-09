@@ -8,7 +8,8 @@
 #     source scripts/schematic.tcl
 #
 # Change "datapath" to the module you want to see: alu, regfile, top, ...
-# Run it again after you change the Verilog; it reloads every file.
+# Run it again after you change the Verilog; it reloads every file. Close the
+# old schematic tab first, so the PDF is saved from the new one.
 #
 # It reads every .v file in rtl/ and rtl/*/, elaborates the design without
 # synthesizing it (you see adders, multiplexers and registers as written),
